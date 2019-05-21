@@ -1,3 +1,13 @@
+
+.navbar-airbnb {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-airbnb .navbar-collapse {
+  flex-grow: 0;
+}
+
 // .navbar-lewagon {
 //   justify-content: space-between;
 //   background: white;
@@ -18,7 +28,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: grey;
+  color: gray;
 }
 
 .nav-link:hover{
