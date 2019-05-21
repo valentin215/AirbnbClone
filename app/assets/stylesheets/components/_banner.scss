@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-top: 0;
 
 }
 
@@ -21,7 +22,8 @@
 }
 
 .banner-content {
-  width: 400px;
+  width: 460px;
+
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,.08);
@@ -29,5 +31,21 @@
 }
 
 .banner-inside {
-  padding: 50px;
+  padding-left: 80px;
 }
+
+.dates-form {
+  display: flex;
+}
+
+.search-button {
+
+}
+
+.search-button:hover {
+  background-color: #B8CADC;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
+
