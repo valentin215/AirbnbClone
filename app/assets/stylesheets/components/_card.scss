@@ -1,0 +1,38 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
+.flat {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 0px rgba(0,0,0,0.2);
+
+}
+
+.flat > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.flat h2 {
+  font-size: 20px;
+  font-weight: bold;
+  opacity: .7;
+  margin: 0;
+}
+
+.flat p {
+  font-size: 18px;
+  opacity: .7;
+  margin: 0;
+}
+p .flat-pricing {
+  font-size: 8px;
+  opacity: .7;
+  margin: 0;
+}
+
