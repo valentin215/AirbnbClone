@@ -12,6 +12,7 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
+
     <nav class="navbar navbar-light bg-white fixed-top" >
       <form class="form-inline">
         <a class="navbar-brand" href="#">
@@ -21,16 +22,20 @@
       </form>
       <div class="navbar-infos d-flex">
           <div class="nav-item active ">
-            <a class="nav-link" href="#">Home</a>
-          </div>
-          <div class="nav-item active ">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="/">Home</a>
           </div>
           <div class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="flats/new">Post</a>
+          </div>
+          <div class="nav-item active ">
+            <a class="nav-link" href="users/sign_in">Login</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="users/sign_up">Register</a>
           </div>
       </div>
     </nav>
+
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
