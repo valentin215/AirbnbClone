@@ -11,25 +11,28 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <nav class="navbar navbar-light bg-white" >
+    <nav class="navbar navbar-light bg-white fixed-top" >
       <form class="form-inline">
         <a class="navbar-brand" href="#">
           <img src="https://storage.myfairproduct.com/production/companies/logos/000/029/461/original/airbnb.png?1479113943" style="height: 30px; width: 30px"/>
         </a>
-        <input class="fas form-control mr-sm-2 shadow-sm p-4 bg-white rounded" type="search" placeholder="&#xf002;    Try for Bacelona" aria-label="Search" style="width: 450px">
+        <input class="form-control fas mr-sm-2 shadow-sm p-4 bg-white rounded" type="search" placeholder="&#xf002;    Try for Bacelona" aria-label="Search" style="width: 450px; border-color: #d8d8d8;">
       </form>
       <div class="navbar-infos d-flex">
           <div class="nav-item active ">
-            <a class="nav-link" href="#">Connexion</a>
+            <a class="nav-link" href="#">Home</a>
+          </div>
+          <div class="nav-item active ">
+            <a class="nav-link" href="#">Login</a>
           </div>
           <div class="nav-item">
-            <a class="nav-link" href="#">Inscription</a>
+            <a class="nav-link" href="#">Register</a>
           </div>
       </div>
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= yield %>#d8d8d8
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

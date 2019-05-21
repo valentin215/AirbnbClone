@@ -13,11 +13,22 @@
 
 .navbar {
   padding: 20px;
-  border-bottom: solid 1px lightgrey;
+  border-bottom: solid 1px #d8d8d8;
 }
 
-.fa-placholder {
-    font-family: "FontAwesome";
-  }
+.nav-link {
+  text-decoration: none;
+  color: grey;
+}
 
+.nav-link:hover{
+  color: black;
+}
 
+// .form-control::placeholder{
+//      font-family: "Open Sans", "Helvetica", "sans-serif";
+// }
+
+// .form-control::placeholder {
+//     font-family: "FontAwesome", "Open Sans";
+//   }
