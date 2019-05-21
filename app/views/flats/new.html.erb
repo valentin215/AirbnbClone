@@ -1,19 +1,16 @@
-<p>Find me in app/views/flats/new.html.erb</p>
+<div class="container-show mx-auto" style="width: 400px">
 
-<h1>New flat</h1>
+  <%= simple_form_for [@flat] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :lat %>
+    <%= f.input :long %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+    <%= f.button :submit %>
 
-<%= simple_form_for [@flat] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :lat %>
-  <%= f.input :long %>
-  <%= f.input :capacity %>
-  <%= f.input :price %>
-  <%= f.input :picture %>
-  <%= f.input :photo_cache, as: :hidden %>
-
-  <%= f.submit "add a Pic", class: "btn btn-primary" %>
-<% end %>
-
-
+  <% end %>
+</div>
