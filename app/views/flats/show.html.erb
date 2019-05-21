@@ -1,5 +1,3 @@
-
-    <h1>Flats#show</h1>
-
-      <%= @flat.id %>
-      <%= @flat.address %>
+<%= @flat.title %>
+<%= cl_image_tag @flat.picture, height: 300, width: 400, crop: :fill %>
+<%= @flat.description%>
