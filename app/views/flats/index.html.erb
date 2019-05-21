@@ -1,1 +1,10 @@
-index.html.erb
+
+
+  <div >
+    <% @flats.each do |flat| %>
+      <h2><%= flat.picture%> </h2>
+      <h2><%= flat.address%> </h2>
+      <p> <strong><%= link_to "see more" , flat_path(flat) %></strong></p>
+      </div>
+    <% end %>
+  </div>
