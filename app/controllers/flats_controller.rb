@@ -1,21 +1,24 @@
 class FlatsController < ApplicationController
-
   def index
     @flats = Flat.all
-  end
-
-  def show
-    @flat = Flat.find(params[:id])
   end
 
   def new
     @flat = Flat.new
   end
 
+  def show
+    @flat = Flat.find(params[:id])
+  end
+
   def create
     @flat = Flat.new(flat_params)
-    @flat.save
-    redirect_to flat_path(@flat)
+    @flat.user = current_user
+    if @flat.save
+      redirect_to flat_path(@flat)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -33,6 +36,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:address, :capacity, :picture, :lat, :long, :price, :description, :title)
+    params.require(:flat).permit(:address, :capacity, :picture, :picture_cache, :lat, :long, :price, :description, :title)
   end
 end

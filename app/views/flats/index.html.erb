@@ -1,1 +1,54 @@
-index.html.erb
+  <div >
+    <% @flats.each do |flat| %>
+      <h2><%= flat.picture%> </h2>
+      <h2><%= flat.address%> </h2>
+      <p> <strong><%= link_to "see more" , flat_path(flat) %></strong></p>
+      </div>
+    <% end %>
+  </div>
+
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="cards">
+    <div class="flat">
+      <img src="https://a0.muscache.com/im/pictures/7c22de80-0bb6-4cca-97c1-2b0451822272.jpg?aki_policy=xx_large">
+      <div class="flat-infos">
+        <div>
+          <h2>Great Location in Barcelona</h2>
+          <p>$65 / night</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flat">
+      <img src="https://a0.muscache.com/im/pictures/7c22de80-0bb6-4cca-97c1-2b0451822272.jpg?aki_policy=xx_large">
+      <div class="flat-infos">
+        <div>
+          <h2>Great Location in Barcelona</h2>
+          <p>$65 / night</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flat">
+      <img src="https://a0.muscache.com/im/pictures/7c22de80-0bb6-4cca-97c1-2b0451822272.jpg?aki_policy=xx_large">
+      <div class="flat-infos">
+        <div>
+          <h2>Great Location in Barcelona</h2>
+          <p>$65 / night</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flat">
+      <img src="https://a0.muscache.com/im/pictures/7c22de80-0bb6-4cca-97c1-2b0451822272.jpg?aki_policy=xx_large">
+      <div class="flat-infos">
+        <div>
+          <h2>Great Location in Barcelona</h2>
+          <p>$65 / night</p>
+        </div>
+      </div>
+    </div>
+</div>
