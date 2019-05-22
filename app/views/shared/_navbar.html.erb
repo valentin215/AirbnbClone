@@ -10,9 +10,9 @@
       <a class="nav-link" href="/">Home</a>
     </div>
     <div class="nav-item">
-
+        <% if user_signed_in? %>
       <a class="nav-link" href="/flats/new">Post</a>
-
+        <% end %>
     </div>
     <div class="nav-item active ">
 
@@ -20,6 +20,11 @@
     </div>
     <div class="nav-item">
       <a class="nav-link" href="/users/sign_up">Register</a>
+    </div>
+    <div>
+     <% if user_signed_in? %>
+      <%= button_to "logout", destroy_user_session_path, :method => :delete %>
+      <% end %>
     </div>
   </div>
 </nav>
