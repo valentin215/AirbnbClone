@@ -14,7 +14,7 @@ carlos_owner = User.create!(name: "Carlos", password: "password", email: "carlos
 
 cristobal_renter = User.create!(name: "Cristobal", password: "password", email: "cristobal@cristobal.com")
 
-flat_carlos = Flat.create!(address:"Gracia, Barcelona", capacity: 4, picture: "Add photo here", user: carlos_owner, lat: 41.3851, long: 2.1734, price: 30.0, description: "Nice 4 bed flat in Gracia" )
+flat_carlos = Flat.create!(address:"Gracia, Barcelona", capacity: 4, picture: "Add photo here", user: carlos_owner, lat: 41.3851, long: 2.1734, price: 30.0, description: "Nice 4 bed flat in Gracia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, rem vero? Iusto libero voluptas, a maiores eos nesciunt molestiae dicta dolorem dolorum quaerat vel minus, tempore laborum sed. Aut, dolore.", title: "Charming house in the middle of the Park Guell" )
 
 booking_carlos = Booking.create!(user: cristobal_renter, flat: flat_carlos, start_date: Date.new(2019,02,19), end_date: Date.new(2019,02,21), total_price: 90)
 
@@ -24,7 +24,7 @@ juan_owner = User.create(name: "juan", password: "password", email: "juan@carlos
 
 valentin_renter = User.create(name: "Valentin", password: "password", email: "Valentin@valentin.com")
 
-flat_juan = Flat.create(address:"Sants, Barcelona", capacity: 3, picture: "Add photo here", user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
+flat_juan = Flat.create(address:"Sants, Barcelona", capacity: 3, picture: "Add photo here", user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum in aliquid, explicabo doloremque, illo minima ut optio accusantium. Vitae praesentium repudiandae odit, placeat officiis. Incidunt rerum fuga, dolores animi reprehenderit?", title: "Beautiful 2 bedrooms appartment in the beach")
 
 booking_valentin = Booking.create(user: valentin_renter, flat: flat_juan, start_date: Date.new(2019,03,19), end_date: Date.new(2019,03,21), total_price: 120)
 
