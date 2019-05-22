@@ -3,10 +3,9 @@
     <div class="flat">
       <%= cl_image_tag flat.picture, height: 300, width: 400, crop: :fill %>
       <div class="flat-infos">
-        <% raise %>
         <div>
-          <h2><%= flat.title%></h2>
-          <p>$<%= flat.price%>/night</p>
+          <h2><%= link_to flat.title, flat %></h2>
+          <p>$<%= flat.price %>/night</p>
         </div>
       </div>
     </div>
