@@ -15,9 +15,9 @@ carlos_owner = User.create!(name: "Carlos", password: "password", email: "carlos
 
 cristobal_renter = User.create!(name: "Cristobal", password: "password", email: "cristobal@cristobal.com")
 
-flat_carlos = Flat.new(address:"Gracia", capacity: 4, user: carlos_owner, lat: 41.3851, long: 2.1734, price: 30.0, description: "Nice 4 bed flat in Gracia" )
+flat_carlos = Flat.new(title: "Beautiful flat", address:"Gracia", capacity: 4, user: carlos_owner, lat: 41.3851, long: 2.1734, price: 30.0, description: "Nice 4 bed flat in Gracia" )
 flat_carlos.remote_picture_url = "https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/12/flathuntingbcnroom.jpg"
-flat_carlos.save
+flat_carlos.save!
 
 
 booking_carlos = Booking.create!(user: cristobal_renter, flat: flat_carlos, start_date: Date.new(2019,02,19), end_date: Date.new(2019,02,21), total_price: 90)
@@ -28,31 +28,31 @@ juan_owner = User.create(name: "juan", password: "password", email: "juan@carlos
 
 valentin_renter = User.create(name: "Valentin", password: "password", email: "Valentin@valentin.com")
 
-flat_juan = Flat.new(address:"Sants", capacity: 3, user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
+flat_juan = Flat.new(title: "Flat close to Espanya", address:"Sants", capacity: 3, user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
 flat_juan.remote_picture_url = "https://images.dwell.com/photos-6063391372700811264/6133539606739378176-large/barcelona-flat-living-room.jpg"
-flat_juan.save
+flat_juan.save!
 
 booking_valentin = Booking.create(user: valentin_renter, flat: flat_juan, start_date: Date.new(2019,03,19), end_date: Date.new(2019,03,21), total_price: 120)
 
 
 
 
-flat_juan2 = Flat.new(address:"Raval", capacity: 5, user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
+flat_juan2 = Flat.new(title: "Flat in raval", address:"Raval", capacity: 5, user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
 flat_juan2.remote_picture_url = "https://barcelona-home.com/cms/wp-content/uploads/2012/09/Students.jpg"
-flat_juan2.save
+flat_juan2.save!
 
 
 
-flat_juan3 = Flat.new(address:"Barceloneta", capacity: 4, user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
+flat_juan3 = Flat.new(title: "Flat Barceloneta", address:"Barceloneta", capacity: 4, user: juan_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
 flat_juan3.remote_picture_url = "https://www.hduquesadecardona.com/media/hotel-duquesa-de-cardona-imageLinkduquesa-cardona-duquesa-fotos-hotel-barcelona2.jpg"
-flat_juan3.save
+flat_juan3.save!
 
 
 
 
-flat_carlos2 = Flat.new(address:"Eixample", capacity: 1, user: carlos_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
+flat_carlos2 = Flat.new(title: "flat in eixample", address:"Eixample", capacity: 1, user: carlos_owner, lat: 41.3851, long: 2.1734, price: 40.0, description: "Nice 3 bed flat in sants" )
 flat_carlos2.remote_picture_url = "https://www.barcelonahacks.com/wp-content/uploads/2017/07/cheap-barcelona-apartments-1024x640.jpg"
-flat_carlos2.save
+flat_carlos2.save!
 
 
 
