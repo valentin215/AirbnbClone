@@ -1,6 +1,13 @@
 class FlatsController < ApplicationController
   def index
     @flats = Flat.all
+    # if params[:location]
+    #   @flats = Flat.where("address ILIKE ?" , "#{params[:location]}" )
+
+    # end
+    # if params[:capacity] != ""
+    # #   @flats = @flats.where(capacity: params[:capacity])
+    # end
   end
 
   def new
