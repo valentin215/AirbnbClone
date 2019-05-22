@@ -6,10 +6,10 @@
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="logout">
-
-  </div>
   <div class="footer-copyright">
     Airbnb made with Love <i class="fas fa-heart"></i> By Eloquent Team
+  </div>
+  <div class="logout">
+  <%= button_to "logout", destroy_user_session_path, :method => :delete%>
   </div>
 </div>
