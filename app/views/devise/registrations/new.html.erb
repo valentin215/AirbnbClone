@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-4 col-sm-6 offset-sm-3">
       <div class="form-registration">
-        <h2>Sign up</h2>
+        <h2>Welcome on Airbnb !</h2>
 
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,7 +27,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
+            <%= f.button :submit, "Sign up", class: "btn btn-danger rounder"%>
           </div>
         <% end %>
 

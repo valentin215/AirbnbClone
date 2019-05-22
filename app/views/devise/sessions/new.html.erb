@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-4 col-sm-6 offset-sm-3">
       <div class="form-login">
-        <h2>Log in</h2>
+        <h2>Welcome on Airbnb !</h2>
 
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,7 +19,7 @@
 
 
 
-              <%= f.button :submit, "Log in" %>
+              <%= f.button :submit, "Login", class: "btn btn-danger rounded"%>
 
           <% end %>
 
