@@ -19,6 +19,7 @@ flat_carlos = Flat.new(address:"Gracia", capacity: 4, user: carlos_owner, lat: 4
 flat_carlos.remote_picture_url = "https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/12/flathuntingbcnroom.jpg"
 flat_carlos.save
 
+
 booking_carlos = Booking.create!(user: cristobal_renter, flat: flat_carlos, start_date: Date.new(2019,02,19), end_date: Date.new(2019,02,21), total_price: 90)
 
 
