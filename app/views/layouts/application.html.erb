@@ -18,7 +18,9 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
+    <% unless params[:action] == 'home' %>
     <%= render 'shared/footer' %>
+    <% end %>
 
   </body>
 </html>
