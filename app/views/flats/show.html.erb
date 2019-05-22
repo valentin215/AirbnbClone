@@ -3,7 +3,8 @@
  <%#= cl_image_tag @flat.picture, height: 300, width: 400, crop: :fill %>
 <%#= @flat.description%>
 <div class="img-house">
-  <img src="http://www.cgarchitect.com/content/portfolioitems/2017/09/140676/bed_evening_r_1500_large.jpg" alt="imagen">
+        <%= cl_image_tag @flat.picture, height: 300, width: 400, crop: :fill %>
+
 </div>
 <div class="container-show">
   <div class="container-info">
@@ -18,6 +19,7 @@
     <div class="container-price">
       <div class="price-per-night">
         <h3>$ <%= @flat.price%> </h3> </p> per night</p>
+
       </div>
       <div class="dates-start">
         <p>Start date: </p>
