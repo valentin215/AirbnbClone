@@ -3,6 +3,11 @@
   background-position: center;
   padding: 150px 0;
   margin-top: 0;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   .dates-form {
     display: flex;
   }
@@ -10,10 +15,10 @@
 
 .banner h1 {
   margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: black;
   font-size: 32px;
   font-weight: bold;
+  opacity: 0.8;
 }
 
 .banner p {
@@ -24,31 +29,68 @@
 }
 
 .banner-content {
-  width: 460px;
-
+  width: 430px;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,.08);
   margin-top: 30px;
+  padding: 28px;
 }
 
 .banner-inside {
   padding-left: 80px;
 }
 
-.search-button {
-
-}
-
-.search-button:hover {
-  background-color: #B8CADC;
-  opacity: 0.5;
-  font-weight: bolder;
-}
-
-
-.color {
+.btn {
   color: white;
-
+  margin-top: 30px;
+  width: 375px;
+  padding: 8px;
+  background-color: #FF595F;
+  font-weight: bold;
+  border-radius: 3px;
 }
+
+.search-form-control p {
+  color: black;
+  font-size: 12px;
+  text-shadow: none;
+  font-weight: bold
+}
+
+#home-description {
+  color: black;
+  font-size: 14px;
+  text-shadow: none;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+.dates-form {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+  border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
