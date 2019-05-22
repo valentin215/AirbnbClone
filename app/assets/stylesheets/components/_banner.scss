@@ -3,7 +3,9 @@
   background-position: center;
   padding: 150px 0;
   margin-top: 0;
-
+  .dates-form {
+    display: flex;
+  }
 }
 
 .banner h1 {
@@ -32,10 +34,6 @@
 
 .banner-inside {
   padding-left: 80px;
-}
-
-.dates-form {
-  display: flex;
 }
 
 .search-button {
