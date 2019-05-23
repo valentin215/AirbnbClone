@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :flat_id, only: %i[create]
 
   def index
-     @bookings = Booking.all
+    @bookings = Booking.all
   end
 
   def create
