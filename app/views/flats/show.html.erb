@@ -22,19 +22,17 @@
       <div class='dates-form'>
         <div>
           <p>START DATE</p>
-            <%= f.input :start_date %>
+            <%= f.input params[:start_date] %>
         </div>
         <div>
           <p>END DATE</p>
-          <%= f.input :end_date %>
+          <%= f.input params[:end_date] %>
         </div>
         <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
       </div>
     <% end %>
     </div>
   </div>
-
   <div class="map">
   </div>
-
 </div>
