@@ -13,7 +13,15 @@
       <div class="other-info">
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
-      </div>
+        </div>
+
+        <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
+
+        <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
+        <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
+      <% end %>
+
+
     </div>
     <div class="container-price">
       <div class="price-per-night">
@@ -36,7 +44,20 @@
         <a href="..." class="btn btn-primary book" >Book</a>
       </div>
     </div>
+
+
+
   </div>
+
+
   <div class="map">
   </div>
+
+
+
+
+
+
 </div>
+
+
