@@ -14,25 +14,44 @@
       <div class="other-info">
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
+        </div>
+        <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
+        <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
+        <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
+      <% end %>
         <p><%= @flat.price %> per night </p>
       </div>
+
     </div>
     <div class="container-price">
       <%= simple_form_for [@flat, @booking] do |f| %>
       <div class='dates-form'>
         <div>
           <p>START DATE</p>
-            <%= f.input params[:start_date] %>
+             <%= f.input :start_date %>
         </div>
         <div>
           <p>END DATE</p>
-          <%= f.input params[:end_date] %>
+            <%= f.input :end_date %>
         </div>
         <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
       </div>
     <% end %>
     </div>
+
+
+
   </div>
+
+
   <div class="map">
   </div>
+
+
+
+
+
+
 </div>
+
+

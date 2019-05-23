@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
   before_action :flat_id, only: %i[create]
 
   def index
-    @bookings = Booking.all
+    # if params[:status] == true
+     @bookings = Booking.all
   end
 
   def create
@@ -25,6 +26,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path(@booking)
+  end
+
+  def host_bookings
+    @bookings = current_user.host_bookings
+  end
+
+  def guest_bookings
+    @bookings = current_user.bookings
   end
 
   private

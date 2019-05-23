@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resources :flats do
         resources :bookings, only: [:new, :create]
     end
-  resources :bookings, only: [:index, :show, :destroy]
+  resources :bookings, only: [:index, :show, :destroy, :update] do
+    collection do
+      get 'host_bookings'
+      get 'guest_bookings'
+    end
+  end
   root to: 'pages#home'
 end
