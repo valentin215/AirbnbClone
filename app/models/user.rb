@@ -8,4 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true, uniqueness: true, length: { minimum: 2 }
   validates :email, presence: true, uniqueness: true, confirmation: { case_sensitive: false }
+
 end

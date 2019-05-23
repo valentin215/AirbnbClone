@@ -15,7 +15,7 @@ carlos_owner = User.create!(name: "Carlos", password: "password", email: "carlos
 
 cristobal_renter = User.create!(name: "Cristobal", password: "password", email: "cristobal@cristobal.com")
 
-flat_carlos = Flat.new(title: "Beautiful flat", address:"Gracia", capacity: 4, user: carlos_owner, lat: 41.3851, long: 2.1734, price: 30.0, description: "Nice 4 bed flat in Gracia" )
+flat_carlos = Flat.new(title: "Beautiful flat", address:"Anselm Clave 9", capacity: 4, user: carlos_owner, lat: 41.3851, long: 2.1734, price: 30.0, description: "Nice 4 bed flat in Gracia" )
 flat_carlos.remote_picture_url = "https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/12/flathuntingbcnroom.jpg"
 flat_carlos.save!
 
