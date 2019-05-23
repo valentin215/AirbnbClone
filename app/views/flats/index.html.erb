@@ -4,7 +4,7 @@
       <%= cl_image_tag flat.picture, height: 300, width: 400, crop: :fill %>
       <div class="flat-infos">
         <div>
-          <h2><%= link_to flat.title, flat %></h2>
+          <h2><%= link_to flat.title, flat_path(flat, start_date: params[:start_date], end_date: params[:end_date]) %></h2>
           <p>$<%= flat.price %>/night</p>
         </div>
       </div>
