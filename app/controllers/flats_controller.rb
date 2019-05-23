@@ -19,6 +19,8 @@ class FlatsController < ApplicationController
     else
       render :new
     end
+    authorize @flat #belongs to pundit
+
   end
 
   def destroy

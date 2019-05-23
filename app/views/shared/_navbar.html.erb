@@ -10,7 +10,10 @@
       <a class="nav-link" href="/">Home</a>
     </div>
     <div class="nav-item">
-        <% if user_signed_in? %>
+      <% if policy(Restaurant).create? %>
+  <%= link_to "New restaurant", new_restaurant_path %>
+<% end %>
+        <%# if user_signed_in? %>
       <a class="nav-link" href="/flats/new">Post</a>
         <% end %>
     </div>
