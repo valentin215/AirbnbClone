@@ -1,0 +1,10 @@
+
+  <%= @booking.id %>
+  <%= @booking.start_date%>
+  <%= @booking.end_date%>
+  <%= @booking.total_price%>
+
+<%= link_to 'Delete', @booking, :method => :delete, data: {:confirm => "You sure?" } %>
+<br>
+<%= link_to 'Back to your search', flats_path %>
+

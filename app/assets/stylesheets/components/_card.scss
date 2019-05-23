@@ -1,7 +1,17 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+  margin-bottom:200px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.flat:hover {
+  opacity: 1;
+   box-shadow: 0 10px 10px rgba(0,0,0,.1);
 }
 
 
@@ -9,7 +19,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 0px rgba(0,0,0,0.2);
-
+  opacity: 0.85;
+  margin-bottom: 24px;
 }
 
 .flat > img {
@@ -20,9 +31,9 @@
 
 .flat h2 {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bolder;
   opacity: .7;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
 .flat p {
@@ -36,3 +47,14 @@ p .flat-pricing {
   margin: 0;
 }
 
+.container-cards {
+ margin: 64px 48px;
+}
+
+.flat-infos {
+  padding: 10px 10px;
+}
+
+.flat-infos a {
+  color: black;
+}

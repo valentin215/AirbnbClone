@@ -1,13 +1,30 @@
 class FlatsController < ApplicationController
   def index
     @flats = Flat.all
-    # if params[:location]
-    #   @flats = Flat.where("address ILIKE ?" , "#{params[:location]}" )
 
+    if params[:location].present?
+      @flats = @flats.where("address ILIKE ?", "%#{params[:location]}%")
+    end
+
+    if params[:capacity].present?
+      @flats = @flats.where("capacity >= ?", params[:capacity].to_i)
+    end
+
+    #  We can access the session when making a booking.
+    # if params[:start_date].present? && params[:end_date].present?
+    #   session[:start_date] = params[:start_date]
+    #   session[:end_date] = params[:end_date]
     # end
-    # if params[:capacity] != ""
-    # #   @flats = @flats.where(capacity: params[:capacity])
-    # end
+
+    # HERE START GEOCODING (CRIS)
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+      }
+    end
   end
 
 
@@ -22,7 +39,10 @@ class FlatsController < ApplicationController
   end
 
   def show
+    # Here we can make use of the sessions[:start_date] && params[:end_date]
+    # Or we can make us of the params[:start_date] && params[:end_date]
     @flat = Flat.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
