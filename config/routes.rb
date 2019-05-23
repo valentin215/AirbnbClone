@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     end
   resources :bookings, only: [:index, :show, :destroy, :update] do
     collection do
-      get 'host_bookings'
-      get 'guest_bookings'
+      get 'host'
+      get 'guest'
     end
   end
   root to: 'pages#home'
