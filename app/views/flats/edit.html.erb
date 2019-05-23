@@ -1,0 +1,16 @@
+<h1>Edit task</h1>
+
+<div class="container-show mx-auto formcontainer" style="width: 400px">
+
+  <%= simple_form_for [@flat] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+    <%= f.button :submit, class: "btn btn-danger"%>
+  <% end %>
+
+</div>
