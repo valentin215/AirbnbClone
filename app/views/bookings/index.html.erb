@@ -1,9 +1,10 @@
-<h1>All bookings</h1>
+<h1>My bookings</h1>
 
 <% @bookings.each do |booking| %>
   <%= booking.id %>
   <%= booking.start_date%>
   <%= booking.end_date%>
   <%= booking.total_price%>
+  <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
   <br>
 <% end %>

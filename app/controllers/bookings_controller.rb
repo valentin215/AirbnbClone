@@ -5,17 +5,11 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  # def new
-  #   @flat = Flat.find(params[:flat_id])
-  #   @booking = Booking.new
-  # end
-
   def create
     @booking = Booking.new(bookings_params)
     @booking.flat = @flat
     @booking.user = current_user
     @booking.total_price = @flat.price * (@booking.end_date - @booking.start_date).to_i
-    raise
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -38,7 +32,6 @@ class BookingsController < ApplicationController
   def flat_id
     @flat = Flat.find(params[:flat_id])
   end
-
 
   def bookings_params
     params.require(:booking).permit(:start_date, :end_date, :total_price)
