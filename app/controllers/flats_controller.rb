@@ -15,6 +15,16 @@ class FlatsController < ApplicationController
     #   session[:start_date] = params[:start_date]
     #   session[:end_date] = params[:end_date]
     # end
+
+    # HERE START GEOCODING (CRIS)
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+      }
+    end
   end
 
   def new
@@ -25,6 +35,7 @@ class FlatsController < ApplicationController
     # Here we can make use of the sessions[:start_date] && params[:end_date]
     # Or we can make us of the params[:start_date] && params[:end_date]
     @flat = Flat.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
