@@ -5,36 +5,32 @@
 <div class="img-house">
   <%= cl_image_tag @flat.picture, crop: :fill %>
 </div>
+
 <div class="container-show">
-  <div class="container-info">
+  <div class="container-info" style="margin-bottom: 150px">
     <div class="container-details">
       <h2><%= @flat.title %></h2>
       <h6><%= @flat.description%></h6>
       <div class="other-info">
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
+        <p><%= @flat.price %> per night </p>
       </div>
     </div>
     <div class="container-price">
-      <div class="price-per-night">
-        <h3>$ <%= @flat.price%> </h3> </p> per night</p>
-
+      <%= simple_form_for [@flat, @booking] do |f| %>
+      <div class='dates-form'>
+        <div>
+          <p>START DATE</p>
+            <%= f.input params[:start_date] %>
+        </div>
+        <div>
+          <p>END DATE</p>
+          <%= f.input params[:end_date] %>
+        </div>
+        <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
       </div>
-      <div class="dates-start">
-        <p>Start date: </p>
-        <p><%= params[:start_date] %></p>
-      </div>
-      <div class="dates-end">
-        <p>End date: </p>
-        <p><%= params[:end_date] %></p>
-      </div>
-      <div class="total-price">
-        <p>Total price:</p>
-        <p>$ NOT YET </p>
-      </div>
-      <div class="button" >
-        <a href="..." class="btn btn-primary book" >Book</a>
-      </div>
+    <% end %>
     </div>
   </div>
   <div class="map">

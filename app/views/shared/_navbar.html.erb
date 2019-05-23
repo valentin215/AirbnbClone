@@ -12,19 +12,22 @@
     <div class="nav-item">
         <% if user_signed_in? %>
       <a class="nav-link" href="/flats/new">Post</a>
-        <% end %>
     </div>
+      <div class="nav-item">
+        <a class="nav-link" href="/bookings">Bookings</a>
+      </div>
     <div class="nav-item active ">
-
+      <% else %>
       <a class="nav-link" href="/users/sign_in">Login</a>
     </div>
     <div class="nav-item">
       <a class="nav-link" href="/users/sign_up">Register</a>
     </div>
+      <% end %>
     <div>
      <% if user_signed_in? %>
       <%= button_to "logout", destroy_user_session_path, :method => :delete %>
-      <% end %>
+    <% end %>
     </div>
   </div>
 </nav>
