@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
   before_action :flat_id, only: %i[create]
 
-  def index
-    @bookings = Booking.all
-  end
-
   def create
     @booking = Booking.new(bookings_params)
     @booking.flat = @flat

@@ -1,0 +1,10 @@
+<h1>Booking guest</h1>
+
+<% @bookings.each do |booking| %>
+  <%= booking.id %>
+  <%= booking.start_date%>
+  <%= booking.end_date%>
+  <%= booking.total_price%>
+  <%= booking.status %>
+  <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
+  <% end %>
