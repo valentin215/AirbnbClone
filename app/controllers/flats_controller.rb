@@ -26,6 +26,10 @@ class FlatsController < ApplicationController
     # Or we can make us of the params[:start_date] && params[:end_date]
     @flat = Flat.find(params[:id])
     @booking = Booking.new
+    if params[:start_date].present? && params[:end_date].present?
+      @booking.start_date = params[:start_date]
+      @booking.end_date = params[:end_date]
+    end
   end
 
   def create
