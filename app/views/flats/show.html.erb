@@ -6,7 +6,7 @@
   <%= cl_image_tag @flat.picture, crop: :fill %>
 </div>
 <div class="container-show">
-  <div class="container-info">
+  <div class="container-info" style="margin-bottom: 150px">
     <div class="container-details">
       <h2><%= @flat.title %></h2>
       <h6><%= @flat.description%></h6>
@@ -16,25 +16,41 @@
       </div>
     </div>
     <div class="container-price">
-      <div class="price-per-night">
-        <h3>$ <%= @flat.price%> </h3> </p> per night</p>
+      <p><%= @flat.price %> per night </p>
 
+      <%= simple_form_for [@flat, @booking] do |f| %>
+      <div class='dates-form'>
+        <div>
+          <p>START DATE</p>
+            <%= f.input :start_date %>
+        </div>
+        <div>
+          <p>END DATE</p>
+          <%= f.input :end_date %>
+        </div>
+        <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
       </div>
-      <div class="dates-start">
-        <p>Start date: </p>
-        <p>1/10/2019</p>
-      </div>
-      <div class="dates-end">
-        <p>End date: </p>
-        <p>4/10/2019</p>
-      </div>
-      <div class="total-price">
-        <p>Total price:</p>
-        <p>$ 197</p>
-      </div>
-      <div class="button" >
-        <a href="..." class="btn btn-primary book" >Book</a>
-      </div>
+    <% end %>
+
+
+
+
+
+
+
+      <!-- <form novalidate="novalidate" class="simple_form search" action="/flats/<%= @flat.id %>/bookings" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+          <div class='dates-form'>
+            <div>
+              <p>START DATE</p>
+              <input class="form-control string required" style="width: 187px;" type="date" name="start_date" id="search_query" placeholder="Start date"/>
+            </div>
+            <div>
+              <p>END DATE</p>
+              <input class="form-control string required" style="width: 187px;" type="date" name="end_date" id="search_query" placeholder="End date"/>
+            </div>
+            <p> Total cost : <%= @total_cost%>  </p>
+            <input type="submit" class="btn btn-primary book">
+      </form> -->
     </div>
   </div>
   <div class="map">

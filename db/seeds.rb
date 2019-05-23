@@ -55,7 +55,6 @@ flat_carlos2.remote_picture_url = "https://www.barcelonahacks.com/wp-content/upl
 flat_carlos2.save!
 
 
-
 	# create_table "users", force: :cascade do |t|
 	# 	t.string "email", default: "", null: false
 	# 	t.string "encrypted_password", default: "", null: false
