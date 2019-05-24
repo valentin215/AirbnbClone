@@ -1,19 +1,26 @@
-<h1>Booking guest</h1>
-
-<% @bookings.each do |booking| %>
-  <%= booking.id %>
-  <%= booking.start_date%>
-  <%= booking.end_date%>
-  <%= booking.total_price%>
-  <%= booking.status %>
-  <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
-  <% end %>
-
-
 <div class="container">
+  <br>
+  <h3>My reservations</h3>
   <div class="row">
-    <div class="col 6">
+       <% @bookings.each do |booking| %>
+        <div class="col-sm-6" style="padding-top: 20px">
+        <div class="card-product">
+          <%= cl_image_tag booking.flat.picture, height: 200, width: 200, crop: :fill %>
+            <div class="card-product-infos">
+              <h3 style="color: black; opacity: 0.8;">Reservation number #<%= booking.id %></h3>
+              <p><strong>Status:</strong> <%= booking.status %></p>
+              <p><strong>Starting date:</strong> <%= booking.start_date%></p>
+              <p><strong>Ending date:</strong> <%= booking.end_date%></p>
+              <p><strong>Total cost:</strong> <%= booking.total_price%> €</p>
 
-    </div>
+              <div class="delete">
+                <br>
+                <%= link_to 'Cancel', booking, :method => :destroy, data: {:confirm => "You sure?" } %>
+              </div>
+            </div>
+        </div>
+      </div>
+      <% end %>
   </div>
+  <br>
 </div>
