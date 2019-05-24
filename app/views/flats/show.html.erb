@@ -15,9 +15,12 @@
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
         </div>
-          <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-danger width' %>
-          <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
-          <button  class="pull-left btn btn-danger btn-small width"> Delete flat</button>
+            <% if current_user == @flat.user %>
+            <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
+            <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
+            <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
+            <% end %>
+
           <% end %>
         </div>
       </div>
