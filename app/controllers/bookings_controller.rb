@@ -26,7 +26,11 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path(@booking)
+    # DESTROY WITH AJAX
+    respond_to do |format|
+      format.html { redirect_to bookings_path(@booking) }
+      format.js
+    end
   end
 
   def host
