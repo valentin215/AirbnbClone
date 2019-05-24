@@ -15,9 +15,9 @@
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
         </div>
-          <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
+          <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-danger width' %>
           <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
-          <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
+          <button  class="pull-left btn btn-danger btn-small width"> Delete flat</button>
           <% end %>
         </div>
       </div>
@@ -36,7 +36,7 @@
             <p>END DATE</p>
               <%= f.input :end_date, label: false %>
           </div>
-          <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
+          <%= f.submit "book",  class: "btn btn-danger book" %>
         </div>
       <% end %>
     </div>

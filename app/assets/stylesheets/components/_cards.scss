@@ -1,10 +1,12 @@
 
 .container-price {
   width: 300px;
-  border: 1px solid gray;
+  // border: 1px solid gray;
   border-radius: 4px;
   padding: 22px;
-  height: 320px;
+  height: 340px;
+  box-shadow: 0 10px 10px rgba(0,0,1,.1);
+  background-color: white;
 }
 
 .container-price-night {
