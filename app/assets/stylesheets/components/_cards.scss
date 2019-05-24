@@ -4,6 +4,17 @@
   border: 1px solid gray;
   border-radius: 4px;
   padding: 22px;
+  height: 320px;
+}
+
+.container-price-night {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  p{
+    margin-bottom:10px;
+    margin-left: 5px;
+  }
 }
 
 .price-per-night {
@@ -33,11 +44,19 @@
   justify-content: space-between;
 }
 
+.dates-form {
+  margin-top: 0px;
+}
+
 .total-price {
   display: flex;
   justify-content: space-between;
 }
 
 .total-price > p {
+}
+
+.container-info h2 {
+  margin-bottom: 24px;
 }
 
