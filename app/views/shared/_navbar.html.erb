@@ -28,10 +28,18 @@
       <a class="nav-link" href="/users/sign_up">Register</a>
     </div>
       <% end %>
+      <% if user_signed_in? %>
+      <li class="nav-item dropdown" style="list-style: none;">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" style="opacity: 0.6;" data-toggle="dropdown" aria-haspopup=" true" aria-expanded="false" src="https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+       </div>
+      </li>
     <div>
-     <% if user_signed_in? %>
-      <%= button_to "logout", destroy_user_session_path, :method => :delete %>
     <% end %>
     </div>
   </div>
 </nav>
+
