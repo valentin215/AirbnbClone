@@ -15,9 +15,11 @@
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
         </div>
+
         <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
         <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
         <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
+
       <% end %>
         <p><%= @flat.price %> per night </p>
       </div>
