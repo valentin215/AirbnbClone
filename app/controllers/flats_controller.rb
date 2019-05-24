@@ -1,11 +1,9 @@
 class FlatsController < ApplicationController
   def index
     @flats = Flat.all
-
     if params[:location].present?
       @flats = @flats.where("address ILIKE ?", "%#{params[:location]}%")
     end
-
     if params[:capacity].present?
       @flats = @flats.where("capacity >= ?", params[:capacity].to_i)
     end
@@ -15,9 +13,8 @@ class FlatsController < ApplicationController
     #   session[:start_date] = params[:start_date]
     #   session[:end_date] = params[:end_date]
     # end
-
     # HERE START GEOCODING (CRIS)
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    # @flats = Flat.where.not(latitude: nil, longitude: nil)
     @markers = @flats.map do |flat|
       {
         lat: flat.latitude,
