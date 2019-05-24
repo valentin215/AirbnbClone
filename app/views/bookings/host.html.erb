@@ -9,13 +9,13 @@
   <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
   <%= simple_form_for booking do |f| %>
     <%= f.input :status, value: 'accepted', as: :hidden  %>
-    <%= f.button "submit", method: :update %>
+    <%= f.submit "accepted", method: :patch %>
   <%# f.button "submit", name: "status", value: "decline" %>
   <% end %>
 
   <%= simple_form_for booking do |f| %>
     <%= f.input :status, value: 'rejected' , as: :hidden  %>
-    <%= f.button "submit" %>
+    <%= f.submit "reject", method: :patch %>
   <%# f.button "submit", name: "status", value: "decline" %>
   <% end %>
 <% end %>
