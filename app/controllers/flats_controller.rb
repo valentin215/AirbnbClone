@@ -47,6 +47,16 @@ class FlatsController < ApplicationController
       @booking.start_date = params[:start_date]
       @booking.end_date = params[:end_date]
     end
+
+    # HERE START GEOCODING (CRIS)
+
+    # @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers =
+      [{
+        lat: @flat.latitude,
+        lng: @flat.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: @flat })
+      }]
   end
 
   def create
