@@ -20,6 +20,7 @@
             <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
             <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
             <% end %>
+
           <% end %>
         </div>
       </div>
@@ -38,7 +39,7 @@
             <p>END DATE</p>
               <%= f.input :end_date, label: false %>
           </div>
-          <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
+          <%= f.submit "book",  class: "btn btn-danger book" %>
         </div>
       <% end %>
     </div>
