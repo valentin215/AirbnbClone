@@ -15,12 +15,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    if params[:commit] == "accepted"
-      @booking.status = "accepted"
-    elsif params[:commit] == "rejected"
-      @booking.status = "rejected"
-    end
-    @booking.save
+    @booking.update(bookings_params)
     redirect_to host_bookings_path(current_user)
   end
 
@@ -49,6 +44,6 @@ class BookingsController < ApplicationController
   end
 
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price)
+    params.require(:booking).permit(:start_date, :end_date, :total_price, :status)
   end
 end

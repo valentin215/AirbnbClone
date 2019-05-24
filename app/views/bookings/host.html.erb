@@ -7,15 +7,18 @@
   <%= booking.total_price%>
   <%= booking.status %>
   <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
+
+  <% unless booking.status == 'accepted' %>
+
   <%= simple_form_for booking do |f| %>
-    <%= f.input :status, value: 'accepted', as: :hidden  %>
+    <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
     <%= f.submit "accepted", method: :patch %>
-  <%# f.button "submit", name: "status", value: "decline" %>
   <% end %>
 
   <%= simple_form_for booking do |f| %>
-    <%= f.input :status, value: 'rejected' , as: :hidden  %>
+    <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
     <%= f.submit "reject", method: :patch %>
-  <%# f.button "submit", name: "status", value: "decline" %>
+  <% end %>
+
   <% end %>
 <% end %>
