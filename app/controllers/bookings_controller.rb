@@ -35,6 +35,7 @@ class BookingsController < ApplicationController
 
   def host
     @bookings = current_user.host_bookings
+    @flats = current_user.flats
   end
 
   def guest

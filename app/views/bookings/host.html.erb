@@ -1,32 +1,63 @@
-<h1>Boookings host</h1>
+<div class="container">
+  <br>
+ <!--  <h4>My reservations:</h4> -->
+ <h3>My reservations</h3>
+  <div id="bookings">
+  <div class="row" style="margin-top: 20px">
+       <% @bookings.each do |booking| %>
+       <div data-booking-id="<%= booking.id %>">
+        <div class="col-sm">
+        <div class="card-product">
+          <%= cl_image_tag booking.flat.picture, height: 200, width: 200, crop: :fill %>
+            <div class="card-product-infos">
+              <h3 style="color: black; opacity: 0.8;">Reservation number #<%= booking.id %></h3>
+              <p><strong>Status:</strong> <%= booking.status %></p>
+              <p><strong>Starting date:</strong> <%= booking.start_date%></p>
+              <p><strong>Ending date:</strong> <%= booking.end_date%></p>
+              <p><strong>Total cost:</strong> <%= booking.total_price%> €</p>
+              <div class="delete">
+                <br>
+                <%= link_to 'delete', booking, :method => :destroy, data: {:confirm => "You sure?" }, remote: true %>
+              </div>
+              <% unless booking.status == 'accepted' %>
 
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
+                  <%= f.submit "accepted", method: :patch %>
+                <% end %>
 
-<div id="bookings">
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li data-booking-id="<%= booking.id %>">
-        <%= booking.id %>
-        <%= booking.start_date%>
-        <%= booking.end_date%>
-        <%= booking.total_price%>
-        <%= booking.status %>
-        <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" }, remote: true  %>
-
-        <% unless booking.status == 'accepted' %>
-
-          <%= simple_form_for booking do |f| %>
-            <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
-            <%= f.submit "accepted", method: :patch, remote: true %>
-          <% end %>
-
-          <%= simple_form_for booking do |f| %>
-            <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
-            <%= f.submit "reject", method: :patch, remote: true %>
-          <% end %>
-
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
+                  <%= f.submit "reject", method: :patch %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+     </div>
+      <% end %>
+  </div>
 </div>
+</div>
+
+<br>
+
+<div class="container-cards">
+  <h3>My flats</h3>
+    <div class="cards" style="margin-top: 20px">
+      <% @flats.each do |flat| %>
+        <%= link_to flat_path(flat, start_date: params[:start_date], end_date: params[:end_date]) do %>
+        <div class="flat">
+          <%= cl_image_tag flat.picture, height: 300, width: 400, crop: :fill %>
+          <div class="flat-infos">
+            <div>
+              <h2><%= flat.title %></h2>
+              <p>$<%= flat.price %>/night</p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+       <% end %>
+    </div>
+  </div>
 
