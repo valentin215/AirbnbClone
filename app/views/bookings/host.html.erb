@@ -1,24 +1,32 @@
 <h1>Boookings host</h1>
 
-<% @bookings.each do |booking| %>
-  <%= booking.id %>
-  <%= booking.start_date%>
-  <%= booking.end_date%>
-  <%= booking.total_price%>
-  <%= booking.status %>
-  <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
 
-  <% unless booking.status == 'accepted' %>
+<div id="bookings">
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li data-booking-id="<%= booking.id %>">
+        <%= booking.id %>
+        <%= booking.start_date%>
+        <%= booking.end_date%>
+        <%= booking.total_price%>
+        <%= booking.status %>
+        <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" }, remote: true  %>
 
-  <%= simple_form_for booking do |f| %>
-    <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
-    <%= f.submit "accepted", method: :patch %>
-  <% end %>
+        <% unless booking.status == 'accepted' %>
 
-  <%= simple_form_for booking do |f| %>
-    <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
-    <%= f.submit "reject", method: :patch %>
-  <% end %>
+          <%= simple_form_for booking do |f| %>
+            <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
+            <%= f.submit "accepted", method: :patch, remote: true %>
+          <% end %>
 
-  <% end %>
-<% end %>
+          <%= simple_form_for booking do |f| %>
+            <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
+            <%= f.submit "reject", method: :patch, remote: true %>
+          <% end %>
+
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+

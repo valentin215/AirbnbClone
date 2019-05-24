@@ -1,10 +1,17 @@
 <h1>Booking guest</h1>
 
-<% @bookings.each do |booking| %>
-  <%= booking.id %>
-  <%= booking.start_date%>
-  <%= booking.end_date%>
-  <%= booking.total_price%>
-  <%= booking.status %>
-  <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
-  <% end %>
+<div id="bookings">
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li data-booking-id="<%= booking.id %>">
+
+        <%= booking.id %>
+        <%= booking.start_date%>
+        <%= booking.end_date%>
+        <%= booking.total_price%>
+        <%= booking.status %>
+        <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" }, remote: true %>
+        <% end %>
+      </li>
+    </ul>
+   </div>

@@ -3,7 +3,7 @@
   <%= @booking.start_date%>
   <%= @booking.end_date%>
   <%= @booking.total_price%>
-  <%= @booking.status %>
+  <%= @booking.status %> | <br>
 
 <%= link_to 'Delete', @booking, :method => :delete, data: {:confirm => "You sure?" } %>
 <br>
