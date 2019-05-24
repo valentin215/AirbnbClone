@@ -41,7 +41,7 @@
 
 <div class="container-cards">
   <h3>My flats</h3>
-    <div class="cards">
+    <div class="cards" style="margin-top: 20px">
       <% @flats.each do |flat| %>
         <%= link_to flat_path(flat, start_date: params[:start_date], end_date: params[:end_date]) do %>
         <div class="flat">

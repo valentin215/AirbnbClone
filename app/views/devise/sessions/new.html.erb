@@ -3,8 +3,9 @@
   <div class="row">
     <div class="col-4 col-sm-6 offset-sm-3">
       <div class="form-login">
-        <h2>Welcome on Airbnb !</h2>
+        <h3>Welcome on Airbnb</h3>
 
+         <img class="col offset-md-4" style="opacity: 0.9; width: 170px; margin-bottom: 30px; margin-top: 10px;" src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png">
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -15,15 +16,12 @@
               <%= f.input :password,
                           required: false,
                           input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
 
 
               <%= f.button :submit, "Login", class: "btn btn-danger rounded"%>
 
           <% end %>
-
-
+         <br>
       <%= render "devise/shared/links" %>
      </div>
     </div>

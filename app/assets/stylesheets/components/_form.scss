@@ -4,12 +4,29 @@
 
 .form-login {
   margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  border: solid  1px lightgrey;
+}
+
+.form-login h3 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 26px;
+  opacity: 0.8;
+  padding: 8px;
 }
 
 .formcontainer {
   padding-top: 20px;
   margin-bottom: 30px;
 }
+
+.form-login img {
+ align: center;
+}
+
 
 
 // .booking-reservation {
