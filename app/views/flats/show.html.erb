@@ -15,36 +15,32 @@
         <p>Address: <%= @flat.address%> </p>
         <p>Capacity: <%= @flat.capacity%> </p>
         </div>
-
-        <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
-        <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
-        <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
-
-      <% end %>
-        <p><%= @flat.price %> per night </p>
+          <%= link_to 'Edit flat', edit_flat_path(@flat), class: 'pull-left btn btn-default width' %>
+          <%= link_to flat_path(@flat), method: :delete, data: { confirm: "Delete #{@flat}?" } do %>
+          <button  class="pull-left btn btn-default btn-small width"> Delete flat</button>
+          <% end %>
+        </div>
       </div>
-
-    </div>
     <div class="container-price">
-      <%= simple_form_for [@flat, @booking] do |f| %>
-      <div class='dates-form'>
-        <div>
-          <p>START DATE</p>
-             <%= f.input :start_date %>
-        </div>
-        <div>
-          <p>END DATE</p>
-            <%= f.input :end_date %>
-        </div>
-        <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
+      <div class="container-price-night">
+        <h2> € <%= @flat.price %> </h2>
+        <p>per night </p>
+        <%= simple_form_for [@flat, @booking] do |f| %>
       </div>
-    <% end %>
+        <div class='dates-form'>
+          <div>
+            <p>START DATE</p>
+               <%= f.input :start_date, label: false %>
+          </div>
+          <div>
+            <p>END DATE</p>
+              <%= f.input :end_date, label: false %>
+          </div>
+          <%= f.submit "book", :input_html => { class: "btn btn-primary book" } %>
+        </div>
+      <% end %>
     </div>
-
-
-
   </div>
-
 
  <div class="content">
   <div class="map-container">
@@ -53,13 +49,9 @@
       style="width: 100%;
       height: 100vh;"
       data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-
-
-
-
 </div>
 
 
