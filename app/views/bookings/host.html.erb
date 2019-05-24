@@ -3,10 +3,10 @@
  <!--  <h4>My reservations:</h4> -->
  <h3>My reservations</h3>
   <div id="bookings">
-  <div class="row" style="margin-top: 20px">
+  <div class="row">
        <% @bookings.each do |booking| %>
        <div data-booking-id="<%= booking.id %>">
-        <div class="col-sm">
+        <div class="col-sm" style="margin-top: 20px;">
         <div class="card-product">
           <%= cl_image_tag booking.flat.picture, height: 200, width: 200, crop: :fill %>
             <div class="card-product-infos">
@@ -23,7 +23,7 @@
 
                 <%= simple_form_for booking do |f| %>
                   <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
-                  <%= f.submit "accepted", method: :patch %>
+                  <%= f.submit "accept", method: :patch %>
                 <% end %>
 
                 <%= simple_form_for booking do |f| %>

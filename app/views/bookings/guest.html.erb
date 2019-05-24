@@ -4,8 +4,7 @@
   <div id="bookings">
     <div class="row">
        <% @bookings.each do |booking| %>
-         <div data-booking-id="<%= booking.id %>">
-        <div class="col-sm-6" style="padding-top: 20px">
+        <div class="col-sm-6" style="padding-top: 20px" data-booking-id="<%= booking.id %>">
         <div class="card-product">
           <%= cl_image_tag booking.flat.picture, height: 200, width: 200, crop: :fill %>
             <div class="card-product-infos">
@@ -16,13 +15,12 @@
               <p><strong>Total cost:</strong> <%= booking.total_price%> €</p>
               <div class="delete">
                 <br>
-                <%= link_to 'Cancel', booking, :method => :destroy, data: {:confirm => "You sure?" }, remote: true %>
+                <%= link_to 'Cancel', booking, :method => :delete, data: {:confirm => "You sure?" }, remote: true %>
               </div>
             </div>
         </div>
       </div>
       <% end %>
-      </div>
   </div>
   </div>
   <br>
