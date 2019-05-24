@@ -1,24 +1,36 @@
 <h1>Boookings host</h1>
 
-<% @bookings.each do |booking| %>
-  <%= booking.id %>
-  <%= booking.start_date%>
-  <%= booking.end_date%>
-  <%= booking.total_price%>
-  <%= booking.status %>
-  <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
 
-  <% unless booking.status == 'accepted' %>
 
-  <%= simple_form_for booking do |f| %>
-    <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
-    <%= f.submit "accepted", method: :patch %>
-  <% end %>
+<div class="container">
+  <div class="row">
+       <% @bookings.each do |booking| %>
+        <div class="col-sm">
+        <div class="card-product">
+          <%= cl_image_tag booking.flat.picture, height: 200, width: 200, crop: :fill %>
+            <div class="card-product-infos">
+              <h3>Reservation number: <%= booking.id %></h3>
+              <p>Status: <%= booking.status %></p>
+              <p>Starting date: <%= booking.start_date%></p>
+              <p>Ending date: <%= booking.end_date%></p>
+              <p><strong>Total cost: <%= booking.total_price%> €</strong></p>
 
-  <%= simple_form_for booking do |f| %>
-    <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
-    <%= f.submit "reject", method: :patch %>
-  <% end %>
+              <%= link_to 'delete', booking, :method => :delete, data: {:confirm => "You sure?" } %>
+              <% unless booking.status == 'accepted' %>
 
-  <% end %>
-<% end %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, input_html: { value: 'accepted' }, as: :hidden  %>
+                  <%= f.submit "accepted", method: :patch %>
+                <% end %>
+
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, input_html: { value: 'rejected' }, as: :hidden  %>
+                  <%= f.submit "reject", method: :patch %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
