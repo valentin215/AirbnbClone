@@ -1,11 +1,28 @@
 
-  <%= @booking.id %>
-  <%= @booking.start_date%>
-  <%= @booking.end_date%>
-  <%= @booking.total_price%>
-  <%= @booking.status %> | <br>
-
-<%= link_to 'Delete', @booking, :method => :delete, data: {:confirm => "You sure?" } %>
-<br>
-<%= link_to 'Back to your search', flats_path %>
-
+<div class="container">
+  <br>
+  <div id="bookings">
+    <div class="row">
+        <div class="col-6 offset-3" style="padding-top: 20px; margin-top: 40px">
+        <div class="card-product" style="width: 600px; height: 240px;">
+          <%= cl_image_tag @booking.flat.picture, height: 200, width: 200, crop: :fill %>
+            <div class="card-product-infos">
+              <h3 style="color: black; opacity: 0.8;">Reservation number #<%= @booking.id %></h3>
+              <p><strong>Status:</strong> <%= @booking.status %></p>
+              <p><strong>Starting date:</strong> <%= @booking.start_date%></p>
+              <p><strong>Ending date:</strong> <%= @booking.end_date%></p>
+              <p><strong>Total cost:</strong> <%= @booking.total_price%> €</p>
+              <div class="delete">
+                <br>
+                <%= link_to 'cancel', @booking, :method => :destroy, data: {:confirm => "You sure?" }%>
+                <br>
+                <%= link_to 'find others', flats_path %>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
+  </div>
+  </div>
+  <br>
+</div>
