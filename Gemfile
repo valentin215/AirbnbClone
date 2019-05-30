@@ -1,4 +1,4 @@
-toucsource 'https://rubygems.org'
+source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'bootsnap', require: false
